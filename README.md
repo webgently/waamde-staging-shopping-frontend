@@ -1,4 +1,4 @@
-# Getting Started with Create WaamDe Shipping App
+# Getting Started with Create Waamde Staging Shopping Frontend Services
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
