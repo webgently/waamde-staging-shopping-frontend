@@ -8,6 +8,8 @@ function range(start, end, increment = 1) {
 
 const minFontSize = 5
 const maxFontSize = 80
+const minFontWeight = 100
+const maxFontWeight = 100
 
 const minSpacingPixel = 0
 const maxSpacingPixel = 800
@@ -33,13 +35,15 @@ module.exports = {
         // Extend default configurations
         extend: {
             colors: {
-                primary: '#151521',
-                second: '#6049D0',
-                third: '#6C53E4',
-                white: '#FFFFFF',
-                gray: '#54586F',
-                'thick-white': '#f8f9fc',
-                'thin-gray': '#F3F6F9',
+                primary: '#09C6AA',
+                second: '#025973',
+                third: '#21405F',
+                fourth: '#000000',
+                fifth: '#232233',
+                sixth: '#6C6C72',
+                seventh: '#FFFFFF',
+                eighth: '#F3EEEA',
+                ninth: '#EEF3FF',
             },
             container: {
                 center: true,
@@ -47,10 +51,10 @@ module.exports = {
         },
         // Override default configurations
         fontWeight: {
-            small: 400,
-            normal: 500,
-            medium: 600,
-            bold: 700,
+            ...range(minFontWeight, maxFontWeight).reduce(
+                (merged, f) => ({ ...merged, [f]: `${f}` }),
+                {}
+            ),
         },
         fontSize: {
             ...range(minFontSize, maxFontSize).reduce(
