@@ -44,6 +44,8 @@ module.exports = {
                 seventh: '#FFFFFF',
                 eighth: '#F3EEEA',
                 ninth: '#EEF3FF',
+                tenth: '#CBCBCB',
+                eleventh: '#F4F4F4',
             },
             container: {
                 center: true,

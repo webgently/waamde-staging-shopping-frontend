@@ -3,6 +3,10 @@ import Layout from '../../components/layout/layout'
 import './home.scss'
 
 const Home = () => {
-    return <Layout></Layout>
+    return (
+        <Layout>
+            <section className="slider"></section>
+        </Layout>
+    )
 }
 export default Home

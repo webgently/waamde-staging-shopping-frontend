@@ -1,3 +1,54 @@
 header {
-    font-family: Semibold;
+    font-family: Poppins;
+    box-shadow: 0px 13px 13px 0px #0000000D;
+    @apply flex xl:space-x-[2vw] py-[2vh] xl:px-[6vw] lg:px-[4vw] md:px-[4vw] px-[4vw] relative;
+    .logo-container {
+        @apply hidden xl:flex justify-center items-center;
+    }
+    .action-container {
+        @apply flex flex-col justify-center space-y-[10px] w-full;
+        .action-top {
+            @apply flex justify-between items-center w-full text-[14px] text-second;
+            button {
+                &:hover {
+                    @apply text-primary;
+                }
+            }
+            select {
+                @apply border-none outline-none;
+            }
+            .language-select {
+                @apply space-x-[2px];
+                @media only screen and (max-width: 252px) {
+                    @apply text-[12px] absolute right-0;
+                }
+            }
+        }
+        .action-line {
+            @apply border-tenth border-b-[1px] w-full;
+        }
+        .action-bottom {
+            @apply xl:flex lg:flex md:block sm:block flex xl:space-y-0 lg:space-y-0 md:space-y-[3vh] sm:space-y-[3vh] space-y-0 justify-between items-center;
+            .search-box {
+                @apply flex justify-between items-center bg-eleventh rounded-[4px] px-[2vw] lg:px-[1vw] space-x-[2vw] lg:space-x-[1vw] py-[8px];
+                button {
+                    @apply bg-fourth text-seventh w-[88px] h-[37px] rounded-[5px];
+                }
+                input {
+                    @apply bg-eleventh w-full border-none outline-none min-w-[100px] sm:min-w-[280px] w-full;
+                }
+            }
+            .nav-group {
+                @apply hidden sm:flex justify-between items-center space-x-[1.2vw] text-[16px] whitespace-nowrap;
+                img {
+                    @apply min-w-[22px];
+                }
+                a {
+                    &:hover {
+                        @apply text-primary border-b-[1px] border-primary;
+                    }
+                }
+            }
+        }
+    }
 }
