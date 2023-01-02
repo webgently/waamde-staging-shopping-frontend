@@ -1,0 +1,62 @@
+footer {
+  font-family: Poppins;
+  @apply relative min-h-[500px];
+  .logo-container {
+    @apply absolute -top-[75px];
+    left: calc(50% - 75px);
+    > div {
+      @apply flex justify-center items-center bg-seventh w-[150px] h-[150px] rounded-full;
+    }
+  }
+  .footer-main {
+    @apply xl:flex lg:flex justify-between bg-ninth h-full pt-[140px] pb-[40px] space-y-[40px] lg:space-y-0 lg:space-x-[20px] xl:px-[8vw] lg:px-[6vw] px-[4vw];
+    h3 {
+      @apply text-[24px];
+    }
+    p {
+      @apply text-[16px];
+    }
+    .footer-items {
+      @apply space-y-[20px];
+      &:nth-child(1) {
+        @apply w-full lg:w-[25%];
+      }
+      &:nth-child(2) {
+        @apply w-full lg:w-[15%];
+      }
+      &:nth-child(3) {
+        @apply w-full lg:w-[15%];
+      }
+      &:nth-child(4) {
+        @apply w-full lg:w-[28%];
+      }
+      &:nth-child(5) {
+        @apply w-full lg:w-[25%];
+        .email-box {
+          @apply flex justify-between items-center bg-eleventh rounded-[4px] max-w-[400px] px-[0.8vw] space-x-[2vw] lg:space-x-[1vw] py-[8px];
+          button {
+            @apply bg-fourth text-seventh w-[42px] h-[37px] rounded-[5px];
+          }
+          input {
+            @apply bg-eleventh w-full border-none outline-none w-full;
+          }
+        }
+      }
+    }
+    .socials {
+      @apply flex lg:hidden justify-center space-x-[10vw] pt-[30px];
+      div {
+        @apply rounded-full
+      }
+    }
+  }
+  .footer-social {
+    @apply flex justify-center items-center bg-second h-[50px] text-[16px] text-seventh relative;
+    .socials {
+      @apply hidden lg:block absolute right-[8vw];
+      .borderline {
+        @apply border-r-[1px] border-primary;
+      }
+    }
+  }
+}
