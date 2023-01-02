@@ -6,12 +6,13 @@ footer {
     left: calc(50% - 75px);
     > div {
       @apply flex justify-center items-center bg-seventh w-[150px] h-[150px] rounded-full;
+      box-shadow: 0 4px 6px -1px #025973, 0 2px 4px -2px #025973;
     }
   }
   .footer-main {
     @apply xl:flex lg:flex justify-between bg-ninth h-full pt-[140px] pb-[40px] space-y-[40px] lg:space-y-0 lg:space-x-[20px] xl:px-[8vw] lg:px-[6vw] px-[4vw];
     h3 {
-      @apply text-[24px];
+      @apply text-[24px] pb-[20px];
     }
     p {
       @apply text-[16px];

@@ -14,7 +14,7 @@ const Footer = () => {
     return (
         <footer>
             <div className="logo-container">
-                <div>
+                <div className="shadow-xl">
                     <img src={Logo} alt="logo" className=" w-[110px]" />
                 </div>
             </div>
