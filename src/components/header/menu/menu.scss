@@ -1,0 +1,15 @@
+menu {
+  @apply bg-third opacity-90 h-full w-[240px] fixed top-0 left-0 z-10 pt-[60px] overflow-x-hidden;
+  span {
+    @apply absolute top-0 right-[25px] text-[32px] ml-[50px] cursor-pointer text-white;
+    &:hover {
+      @apply text-white opacity-80;
+    }
+  }
+  .navlist {
+    @apply block pl-[32px] pr-[8px] py-[8px] text-[22px] text-white;
+    &:hover {
+      @apply text-white opacity-80;
+    }
+  }
+}
