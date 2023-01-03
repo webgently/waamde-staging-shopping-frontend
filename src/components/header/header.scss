@@ -1,7 +1,7 @@
 header {
     font-family: Poppins;
     box-shadow: 0px 13px 13px 0px #0000000D;
-    @apply flex xl:space-x-[2vw] py-[2vh] xl:px-[6vw] lg:px-[4vw] md:px-[4vw] px-[4vw] relative;
+    @apply flex xl:space-x-[2vw] py-[2vh] xl:px-[6vw] px-[4vw] relative;
     .logo-container {
         @apply hidden xl:flex justify-center items-center;
     }

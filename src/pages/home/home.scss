@@ -1,3 +1,40 @@
 .slider {
   @apply bg-eighth h-[100px];
 }
+.mobile-app {
+  font-family: Poppins;
+  background: url("../../assets/images/app.png") no-repeat center right;
+  @apply flex items-center xl:mx-[6vw] mx-[4vw] min-h-[758px] py-[100px] relative;
+  .mobile-app-description {
+    @apply space-y-[60px] md:w-[44%];
+    .feedback-group {
+      @apply sm:flex justify-between md:space-x-[30px] space-y-[20px] sm:space-y-0;
+      .feedback-items {
+        @apply flex justify-center items-center min-w-[170px] h-[176px] rounded-[10px];
+      }
+    }
+  }
+  @media only screen and (max-width: 640px) {
+    background: url("../../assets/images/app.png") no-repeat center center;
+  }
+  &:after {
+    content: url("../../assets/images/line.png");
+    @apply absolute top-[26%] hidden xl:block;
+    left: calc(50% - 75px);
+  }
+}
+.customers {
+  font-family: Poppins;
+  background: url("../../assets/images/bg_feedback.png") no-repeat center center;
+  background-size: cover;
+  @apply flex justify-center h-[929px] py-[102px];
+  .title {
+    @apply text-white text-center px-[10vw] space-y-[55px];
+    h2 {
+      @apply text-[33px];
+    }
+    p {
+      @apply text-[16px];
+    }
+  }
+}
