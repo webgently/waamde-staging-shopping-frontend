@@ -28,11 +28,12 @@ header {
             @apply border-tenth border-b-[1px] w-full;
         }
         .action-bottom {
-            @apply xl:flex lg:flex md:block sm:block flex xl:space-y-0 lg:space-y-0 md:space-y-[3vh] sm:space-y-[3vh] space-y-0 justify-between items-center;
+            @apply xl:flex lg:flex md:block sm:block flex xl:space-y-0 lg:space-y-0 md:space-y-[3vh] sm:space-y-[3vh] space-x-[2vw] sm:space-x-0
+            space-y-0 justify-between items-center;
             .search-box {
-                @apply flex justify-between items-center bg-eleventh rounded-[4px] px-[2vw] lg:px-[1vw] space-x-[2vw] lg:space-x-[1vw] py-[8px];
+                @apply flex justify-between items-center bg-eleventh rounded-[4px] px-[2vw] lg:px-[1vw] space-x-[2vw] lg:space-x-[1vw] py-[4px] sm:py-[8px] text-[14px];
                 button {
-                    @apply bg-fourth text-seventh w-[88px] h-[37px] rounded-[5px];
+                    @apply bg-fourth text-seventh w-[64px] sm:w-[88px] h-[28px] sm:h-[37px] rounded-[5px];
                 }
                 input {
                     @apply bg-eleventh w-full border-none outline-none min-w-[100px] sm:min-w-[280px] w-full;

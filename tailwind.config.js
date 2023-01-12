@@ -46,6 +46,7 @@ module.exports = {
                 ninth: '#EEF3FF',
                 tenth: '#CBCBCB',
                 eleventh: '#F4F4F4',
+                twelfth: '#DDDDDD',
             },
             container: {
                 center: true,

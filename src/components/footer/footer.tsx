@@ -15,7 +15,7 @@ const Footer = () => {
         <footer>
             <div className="logo-container">
                 <div className="shadow-xl">
-                    <img src={Logo} alt="logo" className=" w-[110px]" />
+                    <img src={Logo} alt="logo" className="w-[110px]" />
                 </div>
             </div>
             <div className="footer-main">
