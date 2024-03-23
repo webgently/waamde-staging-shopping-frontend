@@ -1,63 +1,68 @@
-import React, { useEffect, useState } from 'react'
-import Layout from '../../components/layout/layout'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper'
-import $ from 'jquery'
-import 'swiper/css/pagination'
-import 'swiper/css'
-import GooglePlayIcon from '../../assets/images/icons/google_play.svg'
-import AppStoreIcon from '../../assets/images/icons/app_store.svg'
-import DownloadIcon from '../../assets/images/icons/download.svg'
-import RecommendIcon from '../../assets/images/icons/recommend.svg'
-import StarIcon from '../../assets/images/icons/star.svg'
-import Slider1 from '../../assets/images/slider1.png'
-import Slider2 from '../../assets/images/slider2.png'
-import Slider3 from '../../assets/images/slider3.png'
-import Collection1 from '../../assets/images/big-collection1.png'
-import Collection2 from '../../assets/images/big-collection2.png'
-import GoldStarIcon from '../../assets/images/icons/g_star.svg'
-import BlackStarIcon from '../../assets/images/icons/b_star.svg'
-import WishIcon from '../../assets/images/icons/wish.svg'
-import CartIcon from '../../assets/images/icons/cart.svg'
-import LeftIcon from '../../assets/images/icons/left.svg'
-import RightIcon from '../../assets/images/icons/right.svg'
-import './home.scss'
+import $ from 'jquery';
+import React, { useEffect } from 'react';
+import {
+    ResponsiveContainer,
+    StackedCarousel
+} from "react-stacked-center-carousel";
+import { Autoplay, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Collection1 from '../../assets/images/big-collection1.png';
+import Collection2 from '../../assets/images/big-collection2.png';
+import AppStoreIcon from '../../assets/images/icons/app_store.svg';
+import BlackStarIcon from '../../assets/images/icons/b_star.svg';
+import CartIcon from '../../assets/images/icons/cart.svg';
+import DownloadIcon from '../../assets/images/icons/download.svg';
+import GoldStarIcon from '../../assets/images/icons/g_star.svg';
+import GooglePlayIcon from '../../assets/images/icons/google_play.svg';
+import LeftIcon from '../../assets/images/icons/left.svg';
+import RecommendIcon from '../../assets/images/icons/recommend.svg';
+import RightIcon from '../../assets/images/icons/right.svg';
+import StarIcon from '../../assets/images/icons/star.svg';
+import WishIcon from '../../assets/images/icons/wish.svg';
+import Slider1 from '../../assets/images/slider1.png';
+import Slider2 from '../../assets/images/slider2.png';
+import Slider3 from '../../assets/images/slider3.png';
+import Layout from '../../components/layout/layout';
+import { Slide } from '../../components/slide/slide';
+import './home.scss';
 
 const mostCollections: any = [
     { url: '/assets/images/collection1.png', label: 'UNISEX Collection' },
     { url: '/assets/images/collection2.png', label: 'Woman Collection' },
-    { url: '/assets/images/collection3.png', label: 'Male Collection' },
+    { url: '/assets/images/collection3.png', label: 'Male Collection' }
 ]
 const things: any = [
     {
         url: '/assets/images/thing1.png',
         label: 'Consectetur Hampden',
         price: '$104.86',
-        stars: 5,
+        stars: 5
     },
     {
         url: '/assets/images/thing2.png',
         label: 'Exercitat Virginia accusantium',
         price: '$87.00',
-        stars: 5,
+        stars: 5
     },
     {
         url: '/assets/images/thing3.png',
         label: 'Accusantium doloremque',
         price: '$110.00',
-        stars: 1,
+        stars: 1
     },
     {
         url: '/assets/images/thing4.png',
         label: 'Voluptas assumenda',
         price: '$78.00',
-        stars: 3,
+        stars: 3
     },
     {
         url: '/assets/images/thing5.png',
         label: 'Voluptas assumenda',
         price: '$99.00',
-        stars: 4,
+        stars: 4
     },
     {
         url: '/assets/images/thing6.png',
@@ -69,14 +74,14 @@ const things: any = [
         url: '/assets/images/thing7.png',
         label: 'Voluptas assumenda',
         price: '$79.00',
-        stars: 4,
+        stars: 4
     },
     {
         url: '/assets/images/thing8.png',
         label: 'Voluptas assumenda',
         price: '$105.00',
-        stars: 5,
-    },
+        stars: 5
+    }
 ]
 const companies: any = [
     { url: '/assets/images/icons/company1.svg', label: '' },
@@ -154,74 +159,82 @@ const blogs: any = [
 ]
 const people: any = [
     {
-        url: '/assets/images/people.png',
-        className: 'hideLeft',
-        name: 'Ann Lubin',
-        role: 'Co-Founder',
-        describe:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.',
+        image: '/assets/images/people.png',
+        text: 'Co-Founder',
     },
     {
-        url: '/assets/images/people.png',
-        className: 'prevLeftSecond',
-        name: 'Ann Lubin',
-        role: 'Co-Founder',
-        describe:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.',
+        image: '/assets/images/people.png',
+        text: 'Co-Founder',
     },
     {
-        url: '/assets/images/people.png',
-        className: 'prev',
-        name: 'Ann Lubin',
-        role: 'Co-Founder',
-        describe:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.',
+        image: '/assets/images/people.png',
+        text: 'Co-Founder',
     },
     {
-        url: '/assets/images/people.png',
-        className: 'selected',
-        name: 'Ann Lubin',
-        role: 'Co-Founder',
-        describe:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.',
+        image: '/assets/images/people.png',
+        text: 'Co-Founder',
     },
     {
-        url: '/assets/images/people.png',
-        className: 'next',
-        name: 'Ann Lubin',
-        role: 'Co-Founder',
-        describe:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.',
+        image: '/assets/images/people.png',
+        text: 'Co-Founder',
     },
     {
-        url: '/assets/images/people.png',
-        className: 'nextRightSecond',
-        name: 'Ann Lubin',
-        role: 'Co-Founder',
-        describe:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.',
+        image: '/assets/images/people.png',
+        text: 'Co-Founder',
     },
     {
-        url: '/assets/images/people.png',
-        className: 'hideRight',
-        name: 'Ann Lubin',
-        role: 'Co-Founder',
-        describe:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.',
+        image: '/assets/images/people.png',
+        text: 'Co-Founder',
     },
+    {
+        image: '/assets/images/people.png',
+        text: 'Co-Founder',
+    }
 ]
+
+function Pagination1(props: any) {
+  const { centerSlideDataIndex, updatePosition } = props;
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        gap: "20px",
+        marginTop: 20
+      }}
+    >
+      {people.map((_:any, index: number) => {
+        const isCenterSlide = centerSlideDataIndex === index;
+        return (
+            <div
+                key={index}
+                onClick={() => {
+                updatePosition(index);
+            }}
+            style={{
+              height: 15,
+              width: 15,
+              borderRadius: "100%",
+              background: isCenterSlide ? "white" : "none",
+              border: "1px solid white",
+              cursor: "pointer"
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
 
 const Home = () => {
     const moveToSelected = (element: any) => {
         let selected
-        if (element == 'next') {
+        if (element === 'next') {
             selected = $('.selected').next()
-        } else if (element == 'prev') {
+        } else if (element === 'prev') {
             selected = $('.selected').prev()
         } else {
-            console.log(element)
             selected = element
-            console.log('selected', selected)
         }
 
         let next = $(selected).next()
@@ -240,17 +253,21 @@ const Home = () => {
         $(nextSecond).nextAll().removeClass().addClass('hideRight')
         $(prevSecond).prevAll().removeClass().addClass('hideLeft')
     }
-    const prev = () => {
-        moveToSelected('prev')
-    }
-    const next = () => {
-        moveToSelected('next')
-    }
     useEffect(() => {
         $('.customers-group div').click(function () {
             moveToSelected($(this))
         })
     }, [])
+
+    const ref:any = React.useRef(StackedCarousel);
+    const [centerSlideDataIndex, setCenterSlideDataIndex] = React.useState(0);
+    const onCenterSlideDataIndexChange = (newIndex: number) => {
+        setCenterSlideDataIndex(newIndex);
+    };
+
+    const updatePosition = (index: number) => {
+        ref?.current?.swipeTo(index - centerSlideDataIndex);
+    };
 
     return (
         <Layout>
@@ -706,105 +723,54 @@ const Home = () => {
                             risus tempor, ac nunc libero urna, feugiat.
                         </p>
                     </div>
-                    <div className="customers-slider1">
-                        <button
-                            onClick={prev}
-                            className="absolute left-[20px] top-[40%] bg-seventh rounded-full p-[8px] z-[10]"
-                        >
-                            <img
-                                src={LeftIcon}
-                                alt="left"
-                                className="w-[24px] h-[24px]"
+                    <div className="customers-slider">
+                        <div className="card">
+                            <div style={{ width: "100%", position: "relative" }}>
+                                <ResponsiveContainer
+                                    carouselRef={ref}
+                                    render={(width, carouselRef) => {
+                                    return (
+                                    <StackedCarousel
+                                        ref={carouselRef}
+                                        slideComponent={Slide}
+                                        slideWidth={450}
+                                        carouselWidth={width}
+                                        data={people}
+                                        maxVisibleSlide={5}
+                                        disableSwipe
+                                        customScales={[1, 0.85, 0.7, 0.55]}
+                                        transitionTime={450}
+                                        onActiveSlideChange={onCenterSlideDataIndexChange}
+                                    />
+                                    );
+                                }}
+                                />
+                                <button
+                                    className="card-button left"
+                                    onClick={() => ref.current?.goBack()}
+                                >
+                                    <img
+                                        src={LeftIcon}
+                                        alt="left"
+                                        className="w-[24px] h-[24px]"
+                                    />
+                                </button>
+                                <button
+                                    className="card-button right"
+                                    onClick={() => ref.current?.goNext()}
+                                >
+                                    <img
+                                        src={RightIcon}
+                                        alt="right"
+                                        className="w-[24px] h-[24px]"
+                                    />
+                                </button>
+                            </div>
+                            <Pagination1
+                                updatePosition={updatePosition}
+                                centerSlideDataIndex={centerSlideDataIndex}
                             />
-                        </button>
-                        <div className="customers-group">
-                            {people.map((item: any, ind: number) => {
-                                return (
-                                    <div className={item.className} key={ind}>
-                                        <div className="flex flex-col justify-between h-full">
-                                            <p className="flex justify-center">
-                                                <img
-                                                    src={item.url}
-                                                    alt={item.name}
-                                                />
-                                            </p>
-                                            <p className="text-fourth text-[24px] font-[600]">
-                                                {item.name}
-                                            </p>
-                                            <p className="text-tenth text-[20px] font-[600]">
-                                                {item.role}
-                                            </p>
-                                            <p className="text-fourth text-[16px] font-[500] opacity-80">
-                                                {item.describe}
-                                            </p>
-                                        </div>
-                                    </div>
-                                )
-                            })}
                         </div>
-                        <button
-                            onClick={next}
-                            className="absolute right-[20px] top-[40%] bg-seventh rounded-full p-[8px] z-[10]"
-                        >
-                            <img
-                                src={RightIcon}
-                                alt="right"
-                                className="w-[24px] h-[24px]"
-                            />
-                        </button>
-                    </div>
-                    <div className="customers-slider2">
-                        <Swiper
-                            spaceBetween={10}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            autoplay={{
-                                delay: 2500,
-                                disableOnInteraction: false,
-                            }}
-                            breakpoints={{
-                                640: {
-                                    slidesPerView: 1,
-                                    spaceBetween: 20,
-                                },
-                                768: {
-                                    slidesPerView: 1,
-                                    spaceBetween: 20,
-                                },
-                                1024: {
-                                    slidesPerView: 1,
-                                    spaceBetween: 20,
-                                },
-                            }}
-                            modules={[Autoplay, Pagination]}
-                            className="mySwiper customers-group"
-                        >
-                            {people.map((item: any, ind: number) => {
-                                return (
-                                    <SwiperSlide
-                                        key={ind}
-                                        className="customers-item"
-                                    >
-                                        <p className="flex justify-center">
-                                            <img
-                                                src={item.url}
-                                                alt={item.name}
-                                            />
-                                        </p>
-                                        <p className="text-fourth text-[24px] font-[600]">
-                                            {item.name}
-                                        </p>
-                                        <p className="text-tenth text-[20px] font-[600]">
-                                            {item.role}
-                                        </p>
-                                        <p className="text-fourth text-[16px] font-[500] opacity-80">
-                                            {item.describe}
-                                        </p>
-                                    </SwiperSlide>
-                                )
-                            })}
-                        </Swiper>
                     </div>
                 </section>
             </main>

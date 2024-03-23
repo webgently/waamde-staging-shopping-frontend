@@ -240,8 +240,8 @@ main {
         @apply text-[16px];
       }
     }
-    .customers-slider1 {
-      @apply hidden lg:block w-full pt-[100px] relative;
+    .customers-slider {
+      @apply block w-full pt-[100px] relative;
       .customers-group {
         @apply relative h-[480px] overflow-x-hidden;
         > div {
@@ -280,15 +280,6 @@ main {
             @apply p-[2vw] left-[100%] w-[200px] opacity-0;
             transform: translateY(50%) translateX(-50%);
           }
-        }
-      }
-    }
-    .customers-slider2 {
-      @apply block lg:hidden w-full py-[100px] px-[4vw];
-      .customers-group {
-        .customers-item {
-          @apply bg-seventh rounded-[10px] flex flex-col justify-between items-center h-full
-          space-y-[10px] px-[20px] py-[40px];
         }
       }
     }

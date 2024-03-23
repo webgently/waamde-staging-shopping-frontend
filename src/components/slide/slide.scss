@@ -1,0 +1,102 @@
+.card .card-button {
+  position: absolute;
+  top: 43%;
+  box-shadow: none;
+  border-radius: 5px;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+}
+.card .card-button.right {
+  right: 0%;
+}
+.react-stacked-center-carousel {
+  padding: 20px 0;
+}
+
+.card-card {
+  transition: all 300ms ease;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 15px;
+  height:300px;
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-card:hover {
+  transform: scale(1.05);
+}
+
+.react-stacked-center-carousel-slide-0 .card-card {
+  cursor: default;
+}
+
+.react-stacked-center-carousel-slide-0 .card-card:hover {
+  transform: none;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.card-card .card-overlay {
+  user-select: none;
+  position: absolute;
+  background-color: #00000099;
+  transition: all 300ms ease;
+  border-radius: 15px;
+}
+
+.card-card:hover .card-overlay {
+  background-color: #0000002d;
+}
+
+.react-stacked-center-carousel-slide-0 .card-overlay {
+  background-color: #00000099 !important;
+}
+
+.card-card .cover-image {
+  object-fit: cover;
+}
+
+.card-card .cover {
+  position: absolute;
+  transition: opacity 300ms ease;
+}
+.react-stacked-center-carousel-slide-0 .card-card .cover {
+  transition: opacity 300ms ease, z-index 0ms 300ms;
+}
+
+.card-card .cover.on {
+  opacity: 1;
+  z-index: 1;
+}
+
+.card-card .cover.off {
+  opacity: 0;
+  z-index: -1;
+}
+
+.card-card .detail {
+  display: flex;
+}
+.card-card .video {
+  width: 20%;
+}
+.card-card .discription {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-stacked-center-carousel {
+    height: 350px!important;
+}
+

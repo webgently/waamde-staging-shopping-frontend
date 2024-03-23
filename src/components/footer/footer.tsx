@@ -1,13 +1,12 @@
-import React from 'react'
-import Logo from '../../assets/images/logo.png'
 import FacebookIcon from '../../assets/images/icons/facebook.svg'
+import PhoneIcon from '../../assets/images/icons/headphones.svg'
 import InstagramIcon from '../../assets/images/icons/instagram.svg'
+import MailIcon from '../../assets/images/icons/mail.svg'
+import MapIcon from '../../assets/images/icons/map-pin.svg'
+import SendIcon from '../../assets/images/icons/send.svg'
 import TwitterIcon from '../../assets/images/icons/twitter.svg'
 import YoutubeIcon from '../../assets/images/icons/youtube.svg'
-import SendIcon from '../../assets/images/icons/send.svg'
-import PhoneIcon from '../../assets/images/icons/headphones.svg'
-import MapIcon from '../../assets/images/icons/map-pin.svg'
-import MailIcon from '../../assets/images/icons/mail.svg'
+import Logo from '../../assets/images/logo.png'
 import './footer.scss'
 
 const Footer = () => {
@@ -46,15 +45,15 @@ const Footer = () => {
                 <div className="footer-items">
                     <h3>Contact Us</h3>
                     <p className="flex space-x-[10px]">
-                        <img src={PhoneIcon} />
+                        <img src={PhoneIcon} alt="phone_icon" />
                         <span>1800 97 97 69</span>
                     </p>
                     <p className="flex space-x-[10px]">
-                        <img src={MapIcon} />
+                        <img src={MapIcon} alt="map_icon" />
                         <span>502 New Design Str, Melbourne, Australia</span>
                     </p>
                     <p className="flex space-x-[10px]">
-                        <img src={MailIcon} />
+                        <img src={MailIcon} alt="mail_icon" />
                         <span>contact@Waamde.co</span>
                     </p>
                 </div>
